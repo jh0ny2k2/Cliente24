@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    
+    <script>
+        //INICIALIZAMOS LOS NUMEROS QUE QUEREMOS PARA VER SUS DIVISIBLES
+        let numero1 = 3;
+        let numero2 = 2;
+
+        //INICIALIZAMOS EL CONTADOR
+        let contador = 0;
+
+        document.write("\n Los 10 primeros divisores de 3" + "\n")
+        //SACAMOS LOS DIVISIBLES DE 2
+        while (contador < 10) {
+
+            //REALIZAMOS UN FOR PARA RECORRER HASTA EL NUMERO 100
+            for (let i = 1; i <= 100; i++) {
+
+                //COMPROBAMOS SI SON DIVISORES
+                if ( i % numero2 === 0) {
+                    document.write(i + " - ");
+                }
+            }  
+            contador++; 
+            break;
+        }
+
+        document.write("Los 10 primeros divisores de 3" + "\n")
+        //SACAMOS LOS DIVISIBLES DE 3
+        while (contador < 10) {
+
+            //REALIZAMOS UN FOR PARA RECORRER HASTA EL NUMERO 100
+            for (let i = 1; i <= 100; i++) {
+
+                //COMPROBAMOS SI SON DIVISORES
+                if ( i % numero1 === 0) {
+                    document.write(i + " - ");
+                }
+            }  
+            contador++; 
+            break;
+        }
+        
+    </script>
+
+</body>
+</html>

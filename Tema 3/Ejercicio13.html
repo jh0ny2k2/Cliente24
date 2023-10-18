@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       
+       //INICIALIZAMOS LA VARIABLE Y LA PEDIMOS POR TECLADO
+        var palabra = prompt("Ingresa una palabra o texto:");
+
+        //CONVERTIMOS LA PALABRA EN MINUSCULA
+        palabra = palabra.toLowerCase();
+
+        //INVERTIMOS LA PALABRA
+        var palabraInvertida = palabra.split('').reverse().join('');
+
+        //COMPROBAMOS SI LA PALABRA COINCIDE O NO 
+        if (palabra === palabraInvertida) {
+            document.write("La palabra ingresada es un palabra palíndroma.");
+        } else {
+            document.write("La palabra ingresada no es una palabra palíndroma.");
+        }
+    </script>
+hola
+
+</body>
+</html>

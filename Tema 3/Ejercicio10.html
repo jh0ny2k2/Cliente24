@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //CREAMOS UN ARRAY PARA METER TODOS LOS NOMBRES
+        let nombres = [];
+
+        //CREAMOS LA VARIABLE DE NOMBRE Y LA PEDIMOS POR TECLADO
+        let nombre = prompt("Dime un nombre");
+
+        while ((nombre != "fin") || (nombre != "Fin") || (nombre != "FIN")){
+            //METEMOS EN NOMBRE EN EL ARRAY DE NOMBRES
+            nombres.push(nombre);
+            //VOLVEMOS A PRINTEAR EL MENSAJE
+            nombre = prompt("Ingresa otro nombre o 'Fin' para terminar:");
+        }
+
+        //PRINTEAMOS EL RESULTADO DEL EJERCICIO
+        document.write("Has introducido " + nombres.length + " de nombres");
+
+    </script>
+
+</body>
+</html>

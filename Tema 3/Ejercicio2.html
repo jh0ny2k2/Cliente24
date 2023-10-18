@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function diaSemana (dia) {
+            if (dia == 0) {
+                document.write("DOM")
+            } else if (dia == 1) {
+                document.write("LUN");
+            } else if (dia == 2) {
+                document.write("MAR");
+            } else if (dia == 3) {
+                document.write("MIER");
+            } else if (dia == 4) {
+                document.write("JUE");
+            } else if (dia == 5) {
+                document.write("VIER");
+            } else {
+                document.write("SAB");
+            } 
+        }
+
+        let dia = new Date().getDay;
+
+        diaSemana(dia);
+
+    </script>
+
+</body>
+</html>

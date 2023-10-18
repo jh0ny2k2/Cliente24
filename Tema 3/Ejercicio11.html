@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //INICIALIZAMOS LAS VARIABLES Y LAS PEDIMOS POR TECLADO
+        let texto = prompt("Dime un texto");
+        let clave = prompt("Dime la clave que quieres buscar en el texto");
+
+        //CALCULAMOS LA POSICION DE LA CLAVE CON INDEXOF
+        let posicion = texto.search(clave);
+
+        //CREAMOS UN IF PARA COMPROBAR SI SE HA ENCONTRADO LA CLAVE EN EL TEXTO
+        if (posicion  !== -1) {
+
+            //PRINTEAMOS LA SOLUCION YA QUE SE HA ENCONTRADO
+            document.write("La clave ha sido encontrada en la posicion " + posicion);
+        } else {
+
+            //PRINTEAMOS UNA LEYENDA YA QUE NO SE HA ENCONTRADO
+            document.write("La clave no ha sido encontrada");
+        }
+
+    </script>
+
+</body>
+</html>

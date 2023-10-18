@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //CREAMOS UNA VARIABLE Y LA PEDIMOS POR TECLADO
+        let texto = prompt("Dime un texto");
+
+        //CREAMOS UN IF YA QUE NOS PIDE QUE EL TEXTO MINIMO SEA MAYOR QUE DOS 
+        if (texto.length <3) {
+
+            //PEDIMOS DE NUEVO EL TEXTO
+            let texto = prompt("Dime un texto");
+        } else {
+
+            //PRINTEAMOS EL RESULTADO DEL TEXTO
+            document.write("La longitud del texto es: " + texto.length);
+        }
+    </script>
+</body>
+</html>

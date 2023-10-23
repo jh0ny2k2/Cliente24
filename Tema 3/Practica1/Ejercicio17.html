@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //CREAMOS UNA VARIABLE PARA PONER LA VENTANA
+        let ventana;
+
+        //CREAMOS UNA FUNCION PARA PODER ABRIR UNA VENTANA EMERGENTE
+        function abreventana() {
+
+            //ABRIMOS LA VENTANA CON EL COMANDO WINDOW.OPEN("URL", "NOMBRE DE LA VENTANA", WIDTH, HEIGHT)
+            ventanaAbierta = window.open('', 'MiVentana', 'width=200, height=100');
+
+            //CREAMOS UN IF PARA METER COSAS DENTRO DE LA VENTANA
+            if (ventanaAbierta) {
+                ventanaAbierta.document.write('<h1>Ventana Abierta</h1>');
+            } else {
+                alert('El bloqueo de ventanas emergentes está habilitado en tu navegador. Habilita las ventanas emergentes para ver la ventana.');
+            }
+        }
+
+        //CREAMOS UNA FUNCION PARA PODER CERRAR UNA VENTANA EMERGENTE
+        function cierraventana() {
+        
+            //COMPROBAMOS QUE HAY UNA VENTANA CREADA ANTERIORMENTE
+            if (ventanaAbierta && !ventanaAbierta.closed) {
+
+                //CERRAMOS LA VENTANA CREADA CON NOMBREDEVENTANA.CLOSE()
+                ventanaAbierta.close();
+            }
+        }
+
+    </script>
+
+    <!--CREAMOS LOS BOTONES PARA ABRIR Y CERRAR LAS VENTANAS-->
+    <button onclick="abreventana()">Abrir ventana</button><br>
+    <button onclick="cierraventana()">Cerrar ventana</button>
+</body>
+</html>

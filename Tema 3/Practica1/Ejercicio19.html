@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //CREAMOS LA FUNCION PARA REDIRIGIR A OTRA PAGINA HTML
+        function redireccionConAlert() {
+            //MUESTRA LA ADVERTENCIA-ALERTA
+            alert('Esta página se redirigirá automáticamente en unos segundos.');
+            
+            //REDIRIGIMOS A LA NUEVA PAGINA
+            window.location.replace('Ejercicio19-2.html');
+        }
+    </script>
+
+
+    <h1>Página de Advertencia</h1>
+    <button onclick="redireccionConAlert()">Ir a la nueva pagina</button>
+
+</body>
+</html>

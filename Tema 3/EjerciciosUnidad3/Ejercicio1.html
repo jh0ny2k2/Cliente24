@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <script>
+    //HACEMOS UNA FUNCION PARA CALCULAR LA LETRA DEL DNI
+    function calcularLetraDNI(numeroDNI) {
+
+        //DECLARAMOS LAS LETRAS DE LOS POSIBLES RESULTADOS
+        let letrasDNI = "TRWAGMYFPDXBNJZSQVHLCKE";
+        //OBTENEMOS EL RESTO DE LA DIVISION DE EL NUMERO DEL DNI ENTRE 23
+        let resto = numeroDNI % 23;
+        //RETURNAMOS LA LETRA DEL DNI
+        return letrasDNI.charAt(resto);
+    }
+
+    //CREAMOS UN ARRAY PARA ALMACENAR LOS DNIS
+    let array = [];
+
+    //CREAMOS UNA FUNCION PARA SOLICITAR LOS DNIS
+    function solicitarDNI() {
+        
+        //PEDIMOS EL DNI POR PANTALLA
+        let dni = prompt('Por favor, ingrese un DNI (o escriba "-1" para detener):');
+        //CREAMOS UN IF PARA COMPROBAR SI LO QUE HA PUESTO ES -1 O EL DNI
+        if (dni == '-1') {
+            //SI ES -1 ENTONCES PARAMOS EL INTERVALO Y MOSTRAMOS LOS DNIS
+            clearInterval(intervalId);
+            mostrarLetrasDNIs();
+        } else {
+            //SI ES EL DNI ENTONCES PARSEAMOS EL DNI
+            let numeroDNI = parseInt(dni);
+            //COMPROBAMOS QUE ES UN DNI
+            if (!isNaN(numeroDNI)) {
+                //CALCULAMOS LA LETRA DEL DN2I Y LO METEMOS EN EL ARRAY DE LOS DNIS
+                let letraDNI = calcularLetraDNI(numeroDNI);
+                array.push(`${letraDNI}`);
+            }
+            
+        }
+    }
+
+    //CREAMOS UNA FUNCION PARA MOSTRAR LOS DNIS
+    function mostrarLetrasDNIs() {
+        let letrasDNIs = array.join(', ');
+        document.write('Letras de los DNIs introducidos:' + letrasDNIs);
+    }
+
+    //INICIALIZAMOS EL INTERVALO
+    let intervalId = setInterval(solicitarDNI, 2000);
+    
+    </script>
+</body>
+</html>

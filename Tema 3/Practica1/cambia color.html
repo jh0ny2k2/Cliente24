@@ -15,7 +15,14 @@
 </head>
 <body>
     <script>
+        function abreventana() {
 
+        //ABRIMOS LA VENTANA CON EL COMANDO WINDOW.OPEN("URL", "NOMBRE DE LA VENTANA", WIDTH, HEIGHT)
+        let ventanaAbierta = window.open('', 'MiVentana', 'width=200, height=100');
+
+        //CREAMOS UN IF PARA METER COSAS DENTRO DE LA VENTANA
+        ventanaAbierta.document.write()
+}
         function cambiaColor(elemento){
             document.bgColor=elemento.id;
         }
@@ -23,6 +30,7 @@
             document.bgColor="white";
             elemento.style.backgroundImage="";
         }
+
     </script>
     <h1 id="cabecera"> Bienvenidos a mi web </h1>
     <div id="blue" name="blue" style="background-color: blue;" onmouseover="cambiaColor(this)" onmouseout="restauraColor(this)"></div>

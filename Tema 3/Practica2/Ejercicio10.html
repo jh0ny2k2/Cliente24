@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="hola"></p>
+    <p class="hola"></p>
+    <p class="hola"></p>
+    <p class="hola"></p>
+    <p class="hola"></p>
+
+    <button onclick="contarElementos('hola')">ContarElementos</button>
+    <script>
+
+        function contarElementos(elementos) {
+            let elementos = document.getElementsByClassName(elementos);
+            let contador = elementos.length;
+
+            return document.write(contador);
+        }
+
+    </script>
+
+</body>
+</html>

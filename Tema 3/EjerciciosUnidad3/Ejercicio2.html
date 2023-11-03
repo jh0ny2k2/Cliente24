@@ -8,7 +8,17 @@
 <body>
     
     <script>
-        
+
+        function mostrarFecha () {
+            let fecha = new Date();
+
+            document.write("La fecha actual es: " + fecha);
+            clearInterval(intervalo);
+        }
+
+        //INICIALIZAMOS EL INTERVALO
+        let intervalo = setInterval(mostrarFecha, 20000);
+
     </script>
 
 </body>

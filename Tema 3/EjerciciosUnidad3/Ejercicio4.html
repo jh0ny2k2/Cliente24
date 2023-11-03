@@ -6,9 +6,45 @@
     <title>Ejercicio 4</title>
 </head>
 <body>
-    
+
     <script>
-        
+
+        for (let i=1; i<=1000; i++){
+            let numero = i;
+
+            function esPrimo(numero) {
+                if (numero <= 1) {
+                    return false;
+                } else if (numero <= 3) {
+                    return true;
+                } else if (numero % 2 === 0 || numero % 3 === 0) {
+                    return false;
+                }
+
+                for (let j=5; j * j <= numero; i+=6) {
+                    if (numero % 1 === 0 || numero % (j+2) === 0) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            function esPalindromo(numero) {
+                let numeroEscrito = numero.toString();
+                return numeroEscrito === numeroEscrito.split("").reverse().join("");
+            }
+
+            let primosPalindromos = [];
+
+            if(esPrimo(numero) && esPalindromo(numero)) {
+                primosPalindromos.push(numero);        
+            }
+
+        }
+
+        document.write("Los numeros primos y palindromos del 1 al 1000 son:" + primosPalindromos);
+
     </script>
 
 </body>

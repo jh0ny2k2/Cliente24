@@ -8,43 +8,44 @@
 <body>
 
     <script>
-
-        for (let i=1; i<=1000; i++){
-            let numero = i;
-
-            function esPrimo(numero) {
-                if (numero <= 1) {
-                    return false;
-                } else if (numero <= 3) {
-                    return true;
-                } else if (numero % 2 === 0 || numero % 3 === 0) {
-                    return false;
-                }
-
-                for (let j=5; j * j <= numero; i+=6) {
-                    if (numero % 1 === 0 || numero % (j+2) === 0) {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-
-            function esPalindromo(numero) {
-                let numeroEscrito = numero.toString();
-                return numeroEscrito === numeroEscrito.split("").reverse().join("");
-            }
-
-            let primosPalindromos = [];
-
-            if(esPrimo(numero) && esPalindromo(numero)) {
-                primosPalindromos.push(numero);        
-            }
-
+     
+            //CREAMOS UNA FUNCION PARA COMPROBAR QUE ES UN NUMERO PAR
+    function esPrimo(numero) {
+        if (numero < 2) {
+            return false;
         }
 
-        document.write("Los numeros primos y palindromos del 1 al 1000 son:" + primosPalindromos);
+        for (let i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i === 0) {
+                return false;
+            }
+        }
 
+        return true;
+    }
+
+    //CREAMOS UNA FUNCION PARA COMPROBAR QUE ES UN NUMERO PALINDROMO
+    function esPalindromo(numero) {
+        let numeroEscrito = numero.toString();
+        let numeroReverso = numeroEscrito.split('').reverse().join('');
+        return numeroEscrito === numeroReverso;
+    }
+
+    //CREAMOS UN ARRAY PARA PONER LOS NUMEROS QUE CUMPLEN LAS DOS COSAS
+    let primosPalindromos = [];
+
+    //HACEMOS UN FOR PARA SACAR LOS NUMERO ENTRE EL 1 Y EL 1000
+    for (let i = 1; i <= 1000; i++) {
+
+        //CREAMOS UN IF PARA COMPROBAR SI CUMPLE LOS DOS REQUISITOS
+        if (esPrimo(i) && esPalindromo(i)) {
+            //SI CUMPLE CON LOS REQUISITOS LO METEMOS EN EL ARRAY CREADO ANTERIORMENTE
+            primosPalindromos.push(i);
+        }
+    }
+
+    //PRINTEAMOS EL RESULTADO
+    document.write("Los numeros primos y palindromos del 1 al 1000 son: " + primosPalindromos);
     </script>
 
 </body>

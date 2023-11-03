@@ -9,30 +9,29 @@
     
     <script>
         //PEDIMOS LA LETRA POR TECLADO
-        let letra = prompt("Ingresa una letra de la a A la Z").toUpperCase();
+        let letra = prompt("Ingresa una letra de la A a la Z").toUpperCase();
 
-        //COMPROBAMOS QUE SOLO HA PUESTO UNA LETRA
-        if (letra.length === 1) {
-            //COMPROBAMOS QUE ES UNA LETRA VALIDA
-            if (letra >= 'A' && letra <= 'Z') {
-                //CREAMOS EL ARRAY DE LOS DNIS VACIOS
-                let dnis = [];
+        // COMPROBAMOS QUE SOLO HA PUESTO UNA LETRA
+        if (letra.length === 1 && letra >= 'A' && letra <= 'Z') {
+            //CREAMOS EL ARRAY DE LOS DNIs VACÍOS
+            let dnis = [];
 
-                //RECORREMOS LOS DNIS DEL 001 AL 999
-                for(let i=1; i<=999; i++){
-                    let dni = i.toString().padStart(3, 'O');
-                    let dniLetra = dni + letra;
+            //RECORREMOS LOS DNIS DEL 001 AL 999
+            for (let i = 1; i <= 999; i++) {
+                let dni = i.toString().padStart(3, '0');
+                let dniConLetra = dni + letra;
 
-                    //METEMOS EL DNI EN EL ARRAY
-                    dnis.push(dniletra);
-                }
-            } else {
-                document.write("No has introducido un número");
+                // METEMOS EL DNI EN EL ARRAY
+                dnis.push(dniConLetra);
             }
-            document.write("la cantidad de dnis con esa letra es: " + dnis.length); 
-            document.write("El listado de los dnis con esa letra: " + dnis.join(', '));
+
+            // MOSTRAMOS LA CANTIDAD DE DNIs CON ESA LETRA
+            document.write("La cantidad de DNIs con la letra " + letra + " es: " + dnis.length + "<br>");
+
+            // MOSTRAMOS EL LISTADO DE LOS DNIs CON ESA LETRA
+            document.write("El listado de los DNIs con la letra " + letra + ": " + dnis.join(', '));
         } else {
-            document.write("Has puesto varias letras");
+            document.write("No has introducido una letra válida.");
         }
     </script>
 

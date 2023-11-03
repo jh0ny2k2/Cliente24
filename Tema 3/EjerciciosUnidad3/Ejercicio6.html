@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="miFormulario" onsubmit="return verificarDatos()">
+        Nombre: <input type="text" id="nombre" required> 
+        <br>
+        Edad: <input type="number" name="edad" id="edad" required>
+        <br>
+        Afición: <select name="aficiones" id="aficiones" required>
+                    <option value="" selected disabled hidden>Seleccione una afición</option>
+                    <option value="informática">Informática</option>    
+                    <option value="deportes">Deportes</option>
+                    <option value="musica">Música</option>
+                </select>
+        <br>
+        <button type="submit" onclick="abrirVentana()">Enviar</button>
+
+    </form>
+
+    <script>
+
+        function verificar(){
+            //CREAMOS LAS VARIABLES TRAYENDOLAS CON GETELEMENT
+            let nombre = document.getElementById('nombre').value;
+            let edad = document.getElementById('edad').value;
+            let aficion = document.getElementById('aficiones').value;
+
+            //VERIFICAR USUARIO
+            if(nombre.length == 0) {
+                alert('No has escrito nada en el usuario');
+                return;
+            }
+
+            //VERIFICAR EDAD
+            if (isNaN(edad) || edad <= 18) {
+                alert("La edad debe ser mayor de 18 años.");
+                return;
+            }
+
+            if (aficion === "") {
+                alert("Debes seleccionar una afición.");
+                return;
+            }
+        }
+
+        function abrirVentana(){
+            //CREAMOS LA NUEVA VENTANA
+            let nuevaVentana = window.open("", "Validación de formulario", "width=500, height=500");
+
+            //PASAMOS LOS DATOS
+            nuevaVentana.document.write("<html>");
+            nuevaVentana.document.write("<head>");
+            nuevaVentana.document.write("   <title>Validación de formulario</title>");
+            nuevaVentana.document.write("</head>");
+            nuevaVentana.document.write("<bod>");
+            nuevaVentana.document.write("   <h1>Datos del formulario:</h1>");
+            nuevaVentana.document.write("   <p>Nombre: " + nombre + "</p>");
+            nuevaVentana.document.write("   <p>Edad: " + edad + " años</p>");
+            nuevaVentana.document.write("   <p>Afición: " + aficion + "</p>");
+
+
+
+            //CERRAMOS LA VENTANA
+            window.close();
+        }
+    </script>
+</body>
+</html>

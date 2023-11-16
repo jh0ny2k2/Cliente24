@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        //
+        class Edificio {
+            constructor(calle, numero, codigoPostal){
+                this.marca = marca;
+                this.numero = numero;
+                this.codigoPostal = codigoPostal;
+                this.plantas = [];
+            }
+
+            // METODO PARA AGREGAR PLANTAS Y PUERTAS
+            agregarPlantasYPuertas(numPlantas, puertas) {
+
+                for (let i = 0; i < numPlantas; i++) {
+                    this.plantas.push(new Array(puertas).fill(null));
+                }
+            }
+
+            //METODO PARA MODIFICAR NUMERO
+            modificarNumero(numero){
+                this.numero = numero;
+            }
+
+            modificarCalle(calle) {
+                this.calle = calle;
+            }
+
+            modificarCodigoPostal(codigo){
+                this.codigoPostal = codigo
+            }
+
+            imprimeCalle() {
+                return this.calle;
+            }
+
+            imprimeNumero(){
+                return document.write(this.numero);
+            }
+
+            imprimeCodigoPostal() {
+                return this.codigoPostal;
+            }
+
+            agregarPropietario(propietario, planta, puerta){
+
+                if (planta < this.plantas.length && puerta < this.plantas[planta].puertas.length) {
+                    this.plantas[planta].puertas[puerta] = propietario;
+                } else {
+                    console.log('No se ha encontrado la casa específica');
+                }
+            }
+
+            imprimePlantas(plantas) {
+                for (let i = 0 ; i < this.platas.length; i++) {
+                    for (let j = 0; j < this.plantas[i].puertas.length; j++) {
+                        let propietario = this.plantas[i].puertas[j] || 'Sin propietario';
+                        document.write(`  Puerta ${j + 1}: ${propietario}`);
+                        }
+                }
+            }
+        }
+        
+        let edificio1 = new edificio('Garcia Prieto',58,'15706');    
+        
+    </script>
+</body>
+</html>

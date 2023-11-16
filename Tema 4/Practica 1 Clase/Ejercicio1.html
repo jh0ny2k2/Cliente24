@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Practica Clase</title>
+    
+    
+</head>
+<body>
+
+    <script>
+
+        // DATOS DEL ARRAY 
+        let poblaciones = ['Localidad', 'Enero', 'Febrero', 'Marzo', 'Abril'];
+        let Temperaturas = [
+            ['Cuevas del Almazora', 12, 13, 15, 18],
+            ['Granada', 4.5, 8, 9, 15],
+            ['Madrid', 4, 5.8, 8, 13],
+            ['Soria', 0, 1, 6, 10],
+        ];
+
+        function crearTabla(){
+            document.write("<table>");
+            document.write("<tr>");
+            for (i=0 ;i < poblaciones.length; i++){
+                document.write("<th>" + poblaciones[i] + "</th>");  
+            }
+            document.write("<th>Media</th></tr>");
+            let sumaTemperaturas=0;
+            for (i=0 ;i <= Temperaturas.length; i++){
+            document.write("<tr>");
+                for (j=0; j < Temperaturas[i].length; j++){
+                    document.write("<td>" + Temperaturas[i][j] + "</td>");
+                    
+                    if (j>0) {
+                    sumaTemperaturas = sumaTemperaturas + Temperaturas[i][j];
+                    }
+                }
+            
+                document.write("<td>" + (sumaTemperaturas / (Temperaturas[i].length-1) ).toFixed(2) + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        crearTabla();
+        document.write("La temperatura mas alta en marzo ha sido: " +  + " y ha sido en: " +  + "");
+    </script> 
+</body>
+</html>

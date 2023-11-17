@@ -14,7 +14,7 @@
         //
         class Edificio {
             constructor(calle, numero, codigoPostal){
-                this.marca = marca;
+                this.calle = calle;
                 this.numero = numero;
                 this.codigoPostal = codigoPostal;
                 this.plantas = [];
@@ -38,41 +38,54 @@
             }
 
             modificarCodigoPostal(codigo){
-                this.codigoPostal = codigo
+                this.codigoPostal = codigo;
             }
 
             imprimeCalle() {
-                return this.calle;
+                return document.write("Numero: " + this.calle );
             }
 
             imprimeNumero(){
-                return document.write(this.numero);
+                return document.write("Numero: " + this.numero);
             }
 
             imprimeCodigoPostal() {
-                return this.codigoPostal;
+                return document.write("codigo postal: " + this.codigoPostal);
             }
 
             agregarPropietario(propietario, planta, puerta){
 
                 if (planta < this.plantas.length && puerta < this.plantas[planta].puertas.length) {
-                    this.plantas[planta].puertas[puerta] = propietario;
+                    this.plantas[planta][puerta] = propietario;
                 } else {
                     console.log('No se ha encontrado la casa específica');
                 }
             }
 
             imprimePlantas(plantas) {
-                for (let i = 0 ; i < this.platas.length; i++) {
-                    for (let j = 0; j < this.plantas[i].puertas.length; j++) {
-                        let propietario = this.plantas[i].puertas[j] || 'Sin propietario';
-                        document.write(`  Puerta ${j + 1}: ${propietario}`);
+                for (let i = 0 ; i < this.plantas.length; i++) {
+                    for (let j = 0; j < this.plantas[i].length; j++) {
+                        let propietario = this.plantas[i][j] || 'Sin propietario';
+                        document.write(`Planta ${i +1}, Puerta ${j + 1}: ${propietario}`);
                         }
                 }
             }
         }
+
         
-        let edificio1 = new edificio('Garcia Prieto',58,'15706');    
+        let edificio1 = new Edificio('Garcia Prieto',58,'15706');    
+
+        edificio1.agregarPlantasYPuertas(10, 5);
+        edificio1.modificarNumero(5);
+        edificio1.modificarCalle("rio miño");
+        edificio1.modificarCodigoPostal("04745");
+
+        edificio1.imprimeCalle();
+        edificio1.imprimeCodigoPostal();
+        edificio1.imprimeNumero();
+
+        edificio1.agregarPropietario("jhony", 5, 2);
+        edificio1.imprimePlantas();
         
     </script>
 </body>

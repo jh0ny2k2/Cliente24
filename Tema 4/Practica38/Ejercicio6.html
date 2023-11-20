@@ -16,9 +16,10 @@
             }  
             
             imprimeDatos () {
-                document.write("codigo: " + ProductoAlimenticio.codigo);
-                document.write("nombre: " + ProductoAlimenticio.nombre);
-                document.write("precio: " + ProductoAlimenticio.precio);
+                let texto = document.write("codigo: " + ProductoAlimenticio.codigo +
+                                           "nombre: " + ProductoAlimenticio.nombre +
+                                           "precio: " + ProductoAlimenticio.precio);
+                return texto;
             }
         }
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    
+    <script>
+        function informacion(){
+            let informacion = `
+                <h2>Información de la Página</h2>
+                <p>Nombre del servidor: ${window.location.hostname}</p>
+                <p>URL: ${window.location.href}</p>
+                <p>Puerto: ${window.location.port}</p>
+                <p>Protocolo: ${window.location.protocol}</p>
+            `;
+
+            let informacionNavegador = `
+                <h2>Información del Navegador</h2>
+                <p>Nombre del navegador: ${navigator.appName}</p>
+                <p>Versión del navegador: ${navigator.appVersion}</p>
+                <p>Plataforma: ${navigator.platform}</p>
+                <p>User-Agent: ${navigator.userAgent}</p>
+            `;
+
+            let crearNuevaVentana = window.open('', '_blanck', 'width=600, height=400');
+
+            crearNuevaVentana.document.write(informacion + informacionNavegador);
+        }
+
+        window.onload = informacion;
+    </script>
+</body>
+</html>

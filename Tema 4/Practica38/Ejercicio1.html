@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //DECLARAMOS LAS VARIABLES
+        let numero1 = document.write(prompt(parseInt("Dime un numero")));
+        let numero2 = document.write(prompt(parseInt("Dime un numero")));
+        let numero3 = document.write(prompt(parseInt("Dime un numero")));
+        let numero4 = document.write(prompt(parseInt("Dime un numero")));
+
+        function calcularMedia (numero1, numero2, numero3, numero4) {
+            let suma = numero1 + numero2 + numero3 + numero4;
+
+            let media = suma / 4;
+
+            return media;
+        }    
+
+        let resultado = calcularMedia(numero1, numero2, numero3, numero4);
+        parseFloat(resultado);
+        document.write("la media aritmetica es: " + resultado);
+
+    </script>
+</body>
+</html>

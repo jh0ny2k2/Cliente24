@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    
+    <p id="contenido">Hola buenos dias</p>
+
+    <script>
+
+        function cambiarColorTexto () {
+            let parrafo = document.getElementById('contenido');
+
+            parrafo.innerHTML = 'contenido cambiado';
+            parrafo.style.color = 'green';
+        } 
+
+        window.onload = cambiarColorTexto();
+    </script>
+</body>
+</html>

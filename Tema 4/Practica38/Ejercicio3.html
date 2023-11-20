@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+
+    <script>
+        let numeros = [];
+
+        for (let i = 0; i < 15; i++) {
+            let numero = parseInt(prompt("Dime un numero"));
+            numeros.push(numero);
+        }
+
+        let mayor = numeros[0];
+        let posiciones = [];
+
+        for (let i = 1; i < numeros.length; i++) {
+            if (numeros[i] > mayor) {
+                mayor = numeros[i];
+                posiciones = [i];
+            } else if (numeros[i] === mayor) {
+                posiciones.push(i);
+            }
+        }
+
+        document.write("El numero mayor es: " + mayor + "<br>");
+        document.write("Se encuentra en la posicion: " + posiciones.join(", "));
+    </script>
+</body>
+</html>

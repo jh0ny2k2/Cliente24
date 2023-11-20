@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    
+
+    <script>
+        function insertarTabla() {
+            let body = document.body;
+
+            let tabla = document.createElement('table');
+            tabla.border = '1';
+
+            for (let i = 0; i < 2; i++) {
+                let fila = tabla.insertRow(i);
+
+                for (let j = 0; j<2; j++) {
+                    let celda = fila.insertCell(j);
+
+                    let contenido = document.createTextNode('Fila' + (i + 1) + ', columna' + (j + 1));
+                    celda.appendChild(contenido);
+                }
+            }
+
+            body.appendChild(tabla);
+        }
+
+        window.onload = insertarTabla;
+    </script>
+</body>
+</html>

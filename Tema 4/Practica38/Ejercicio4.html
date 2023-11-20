@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function abrirVentana (mensaje) {
+            let ventana = window.open("" ,"ventana", "width=200, heigth=200");
+            
+            ventana.document.write(mensaje);
+        }
+
+        let palabras = prompt("escribe una serie de palabras separadas por espacio");
+
+        let array = palabras.split(" ");
+
+        let primeraPalabra = array[0];
+        let ultimaPalabra = array[array.length - 1];
+        let numeroPalabras = array.length;
+        let palabrasOrdenadas = array.slice().sort();
+
+        let mensaje = document.write(
+            "La primera palabra es: " + primeraPalabra +
+            "<br>La ultima palabras es: " + ultimaPalabra +
+            "<br>El numero de palabras es: " + numeroPalabras + 
+            "<br>Las palabras ordenadas son: " + palabrasOrdenadas
+        ); 
+
+        Document.write(mensaje);
+        abrirVentana(mensaje);
+    </script>
+</body>
+</html>

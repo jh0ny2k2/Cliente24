@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class ProductoAlimenticio {
+            constructor (codigo, nombre, precio) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.precio = precio;
+            }  
+            
+            imprimeDatos () {
+                document.write("codigo: " + ProductoAlimenticio.codigo);
+                document.write("nombre: " + ProductoAlimenticio.nombre);
+                document.write("precio: " + ProductoAlimenticio.precio);
+            }
+        }
+
+        let p1 = new Producto ("111", "pr1", 100);
+        let p2 = new Producto ("112", "pr2", 111);
+        let p3 = new Producto ("113", "pr3", 133);
+
+        let productos = [];
+
+        productos.push(p1);
+        productos.push(p2);
+        productos.push(p3);
+
+        for (let i = 0; i < productos.length; i++) {
+            imprimeDatos(productos[i]);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla ejercicio2</title>
+    <script>
+        function seleccionarTodos() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+            }
+        }
+
+        function desseleccionarTodos() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        }
+
+        // Array de personas
+        var personas = ['pepe', 'lola', 'juan', 'lucas', 'lorena', 'asunta'];
+
+        // Función para crear los checkboxes
+        function crearCheckboxes() {
+            var divPersonas = document.getElementById('personas');
+
+            // Recorremos el array de personas y creamos un checkbox por cada una
+            for (var i = 0; i < personas.length; i++) {
+                var input = document.createElement('input');
+                input.type = 'checkbox';
+                input.name = 'persona';
+                input.value = personas[i];
+
+                var label = document.createElement('label');
+                label.innerHTML = personas[i];
+
+                divPersonas.appendChild(input);
+                divPersonas.appendChild(label);
+                divPersonas.appendChild(document.createElement('br'));
+            }
+        }
+
+        // Función para obtener los valores seleccionados y mostrarlos en el textarea
+        function enviar() {
+            var checkboxes = document.getElementsByName('persona');
+            var resultado = document.getElementById('resultado');
+            var valoresSeleccionados = [];
+
+            // Recorremos los checkboxes y agregamos los valores seleccionados al array
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    valoresSeleccionados.push(checkboxes[i].value);
+                }
+            }
+
+            // Mostramos los valores seleccionados en el textarea
+            resultado.value = valoresSeleccionados.join('\n');
+        }
+
+        // Llamamos a la función para crear los checkboxes cuando se carga la página
+        window.onload = function() {
+            crearCheckboxes();
+
+            // Agregamos el evento al botón de enviar
+            var botonEnviar = document.getElementById('enviar');
+            botonEnviar.addEventListener('click', enviar);
+        };
+    </script>
+    <style>
+        div#capa {
+            border: 1px solid #666;
+            padding: 10px;
+            margin: 10px 100px;
+            background-color: beige;
+            opacity: 0.8;
+            float: left;
+            width: 300px;
+        }
+        div#contenedor{
+            margin: 0 auto;
+            width: 800px;            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="capa">
+            <form name="formulario">
+                <input type="checkbox" id="todos" onclick="seleccionarTodos()">Seleccionar todos
+                <input type="checkbox" id="ninguno" onclick="desseleccionarTodos()">Deseleccionar todos
+                <br>
+                <div id="personas"></div>
+            </form>
+        </div>
+        <div id="capa2">
+            <input type="button" id="enviar" value="Enviar >>">
+            <textarea id="resultado" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>

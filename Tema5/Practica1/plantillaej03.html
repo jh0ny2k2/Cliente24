@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla ej03</title>
+    <script>
+        function verPalabras() {
+            var texto = document.getElementById('texto').value.trim();
+            var palabras = texto.split(/\s+/); // Dividir el texto en palabras
+
+            var divPalabras = document.getElementById('palabras');
+            divPalabras.innerHTML = ''; // Limpiar el contenido anterior
+
+            // Crear checkboxes para cada palabra
+            for (var i = 0; i < palabras.length; i++) {
+                var input = document.createElement('input');
+                input.type = 'checkbox';
+                input.name = 'palabra';
+                input.value = palabras[i];
+
+                var label = document.createElement('label');
+                label.innerHTML = palabras[i];
+
+                divPalabras.appendChild(input);
+                divPalabras.appendChild(label);
+                divPalabras.appendChild(document.createElement('br'));
+            }
+        }
+    </script>
+    <style>
+        div#capa {
+            border: 1px solid #666;
+            padding: 10px;
+            margin: 10px 100px;
+            background-color: beige;
+            opacity: 0.8;
+            float: left;
+            width: 300px;
+        }
+        div#contenedor{
+            margin: 0 auto;
+            width: 800px;            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="capa">
+            <h1>Ver palabras</h1>
+            <textarea id="texto" cols="30" rows="10"></textarea>
+            <br>
+            <button type="button" onclick="verPalabras()">Ver palabras</button>
+            <div id="palabras"></div>
+        </div>
+    </div>
+</body>
+
+</html>

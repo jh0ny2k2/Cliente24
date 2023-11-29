@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla  Ejercicio 1</title>
+    <script>
+    function seleccionarTodos() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    }
+
+    function desseleccionarTodos() {
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    }
+    </script>
+    <style>
+        div#capa{
+            border: 1px solid #666;
+            padding: 10px;
+            margin: 10px 150px; 
+            background-color:beige;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div id="capa">
+        <form name="formulario">
+            <input type="checkbox" id="todos" onclick="seleccionarTodos()">Seleccionar todos <input type="checkbox" id="todos" onclick="desseleccionarTodos()">Deseleccionar todos <br>
+            <input type="checkbox" name="item" value="1">Item1 <br>
+            <input type="checkbox" name="item" value="2">Item2 <br>
+            <input type="checkbox" name="item" value="3">Item3 <br>
+            <input type="checkbox" name="item" value="4">Item4 <br>
+            <input type="checkbox" name="item" value="5">Item5 <br>
+            <input type="checkbox" name="item" value="6">Item6 <br>
+            <input type="checkbox" name="item" value="7">Item7 <br>
+        </form>
+    </div>
+
+</body>
+</html>

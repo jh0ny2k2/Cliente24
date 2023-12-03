@@ -5,9 +5,67 @@
     <title>Plantilla ejercicio 5</title>
     <script>
         
-        window.onload{
-            
+		function checkLogin() {
+        let isValid = true;
+        let nombre = document.getElementById("nombre").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let passver = document.getElementById("passver").value;
+        let dni = document.getElementById("dni").value;
+        let tarjeta = document.getElementById("tarjeta").value;
+        let terms = document.getElementById("terms").checked;
+
+        if (nombre === "") {
+            alert("Por favor, complete el campo Nombre");
+            document.getElementById("nombre").focus();
+            isValid = false;
         }
+
+        if (email === "") {
+            alert("Por favor, complete el campo Email");
+            document.getElementById("email").focus();
+            isValid = false;
+        }
+
+        if (pass === "") {
+            alert("Por favor, complete el campo Contraseña");
+            document.getElementById("pass").focus();
+            isValid = false;
+        }
+
+        if (passver === "") {
+            alert("Por favor, repita la contraseña");
+            document.getElementById("passver").focus();
+            isValid = false;
+        }
+
+        if (pass !== passver) {
+            alert("Las contraseñas no coinciden");
+            document.getElementById("passver").focus();
+            isValid = false;
+        }
+
+        if (dni === "") {
+            alert("Por favor, complete el campo DNI");
+            document.getElementById("dni").focus();
+            isValid = false;
+        }
+
+        if (tarjeta === "") {
+            alert("Por favor, seleccione una opción de tarjeta");
+            document.getElementById("tarjeta").focus();
+            isValid = false;
+        }
+
+        if (!terms) {
+            alert("Por favor, acepte las condiciones de uso");
+            document.getElementById("terms").focus();
+            isValid = false;
+        }
+
+		alert('Formulario enviado');
+        return isValid;
+    }
     </script>
     <style>
         div#capa{
@@ -23,34 +81,36 @@
 </head>
 <body>
     <div id="capa">
-		<form action="" name="formulario">
-			<h2>Rellena tu CV</h2>
-			<label for="nombre">Nombre: *</label><br>
+		<form onsubmit="return checkLogin()">
+			Nombre: *<br>
 			<input type="text" id="nombre" name="nombre"><br>
-			<label for="apellidos">Apellidos: *</label><br>
+			Apellidos:<br>
 			<input type="text" id="apellidos" name="apellidos"><br>
-			<label for="pass">Contraseña: *</label><br>
+			Contraseña: *<br>
 			<input type="password" id="pass" name="pass"><br>
-			<label for="passver">Repite contraseña: *</label><br>
+			Repite contraseña: *<br>
 			<input type="password" id="passver" name="passver"><br>
-			<label for="email">Email: *</label><br>
+			Email: *<br>
 			<input type="text" id="email" name="email"><br>
-			<label for="dni">DNI: *</label><br>
+			DNI:<br>
 			<input type="text" id="dni" name="dni"><br>
-			<label for="telefono">Teléfono: </label><br>
+			Teléfono:<br>
 			<input type="text" id="telefono" name="telefono"><br>
-			<label for="sexo">Sexo: </label><br>
-			<input type="radio" id="sexo" name="sexo" value="Hombre">Hombre
-			<input type="radio" id="sexo" name="sexo" value="Mujer">Mujer<br>
-			<label for="tarjeta">Tarjeta: *</label><br>
-			<select name="tarjeta" id="tarjeta">
+			Sexo:<br>
+			<input type="radio" id="hombre" name="sexo" value="hombre">
+			<label for="hombre">Hombre</label>
+			<input type="radio" id="mujer" name="sexo" value="mujer">
+			<label for="mujer">Mujer</label><br>
+			Tarjeta:<br>
+			<select id="tarjeta" name="tarjeta">
 				<option value="">Seleccione una opción</option>
 				<option value="visa">Visa</option>
 				<option value="mastercard">Mastercard</option>
-				<option value="paypal">Paypal</option>
-			</select><br>			
-			<input type="checkbox" id="condiciones" name="condiciones" value="aceptadas">Acepto las condiciones de uso de esta web<br>
-			<input type="button" value="Aceptar">
+				<option value="amex">American Express</option>
+			</select><br>
+			<input type="checkbox" id="terms" name="terms">Acepto las condiciones de uso de esta web
+			<br>
+			<input type="submit" value="Enviar">
 		</form>
     </div>
 </body>

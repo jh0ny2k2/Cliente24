@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ejercicio 4. Fotoslider</title>
+	<script>
+		var indexFoto = 1;
+		window.onload = function () {
+			var ruta = "imagenes/";
+			var fotos = ["img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg", "img05.jpg", "img06.jpg"];
+			var avance = document.getElementById("avance");
+
+
+		}
+	</script>
+	<style>
+		div#contenedor {
+			margin: 0 auto;
+			width: 700px;
+			background: black;
+			border: 5px solid gold;
+			margin: 0 auto;
+			padding: 10px;
+			text-align: center;
+		}
+		
+		div#lienzo {
+			width: 700px;
+			height: 500px;
+		}
+		
+		div#controles {
+			background: white;
+			width: 90%;
+			text-align: center;
+			margin: 10px auto;
+			margin-bottom: 0;
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor" class="clearfix">
+		<div id="lienzo"><img id="foto" src="imagenes/img01.jpg" alt=""></div>
+		<div id="controles">
+			<input type="button" id="atras" value="<<">
+			<input type="button" id="avance" value=">>">
+		</div>
+
+	</div>
+</body>
+
+</html>

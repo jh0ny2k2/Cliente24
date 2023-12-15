@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="container"></div>
+
+    <script>
+
+        let container = document.getElementById("container");
+        let textos = ['cuevas del almanzora', 'Ies Jaroso', 'Ven a Cuevas del Almanzora y matricúlate'];
+
+       let contador = 0;
+
+        function banner() {
+
+            container.textContent = textos[contador];
+
+            contador = (contador + 1) % textos.length;
+
+            setTimeout(banner, 1000);
+        }
+
+        banner();
+
+    </script>
+</body>
+</html>

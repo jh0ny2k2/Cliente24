@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        class Inmueble {
+            constructor (direccion, codigoPostal, localidad, provincia, metrosCuadrados, precio) {
+                this.direccion = direccion;
+                this.codigoPostal = codigoPostal;
+                this.localidad = localidad;
+                this.provincia = provincia;
+                this.metrosCuadrados = metrosCuadrados;
+                this.precio = precio;
+            }
+
+            mostrarInformación () {
+                let mensaje = 'Los datos del inmueble son: <br> -Direccion: ' 
+                                + this.direccion + '<br> -Codigo Postal: ' 
+                                + this.codigoPostal + '<br> -Localidad: ' 
+                                + this.localidad + '<br> -Provincia: ' 
+                                + this.provincia + '<br> -Metros cuadrados: ' 
+                                + this.metrosCuadrados + '<br> -Precio: ' 
+                                + this.precio ;
+
+                return document.write(mensaje);
+            }
+
+            calcularDescuento(porcentaje) {
+                let descuento = (porcentaje / 100) * this.precio;
+
+                return this.precio - descuento;
+            }
+        }
+
+        let direccion = prompt('Ingrese la direccion del inmueble');
+        let codigoPostal = prompt('Ingrese el codigo postal del inmueble');
+        let localidad = prompt('ingrese la localidad del inmueble');
+        let provincia = prompt('Ingrese la provincia del inmueble');
+        let metrosCuadrados = parseFloat(prompt('Ingrese los metros cuadrados del inmueble'));
+        let precio = parseFloat(prompt('Ingrese el precio del inmueble'));
+        let porcentaje = parseFloat(prompt('Ingrese el tanto porciento del descuento'));
+
+        let inmueble1 = new Inmueble(direccion, codigoPostal, localidad, provincia, metrosCuadrados, precio, porcentaje);
+
+        inmueble1.mostrarInformación();
+        
+        let precioDescuento = inmueble1.calcularDescuento(porcentaje);
+        document.write('<br>El precio con el descuento es: ' + precioDescuento);
+
+    </script>
+</body>
+</html>
